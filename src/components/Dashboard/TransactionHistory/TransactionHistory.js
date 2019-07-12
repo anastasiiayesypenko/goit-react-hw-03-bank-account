@@ -6,18 +6,18 @@ const TransactionHistory = ({ history }) => (
   <table className={styles.history}>
     <thead>
       <tr>
-        <th> Transaction </th> <th> Amount </th> <th> Date </th>{' '}
-      </tr>{' '}
-    </thead>{' '}
+        <th> Transaction </th> <th> Amount </th> <th> Date </th>
+      </tr>
+    </thead>
+
     <tbody>
-      {' '}
       {history.map(item => (
         <tr key={item.id}>
-          <td className={styles.type}> {item.type} </td>{' '}
-          <td> {`${item.amount} $`} </td> <td> {item.date} </td>{' '}
+          <td className={styles.type}> {item.type} </td>
+          <td> {`${item.amount} $`} </td> <td> {item.date} </td>
         </tr>
-      ))}{' '}
-    </tbody>{' '}
+      ))}
+    </tbody>
   </table>
 );
 TransactionHistory.propTypes = {

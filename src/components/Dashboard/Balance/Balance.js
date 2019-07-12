@@ -5,31 +5,35 @@ import styles from './Balance.module.css';
 const Balance = ({ balance, history }) => (
   <section className={styles.balance}>
     <span>
-      <span className={styles.green}> ⬆ </span>{' '}
+      <span className={styles.green}> ⬆ </span>
+
       {history.reduce((acc, item) => {
         if (item.type === 'deposit') {
           acc = Number(acc) + Number(item.amount);
         }
         return acc;
-      }, 0)}{' '}
-      {' $'}{' '}
-    </span>{' '}
+      }, 0)}
+
+      {' $'}
+    </span>
+
     <span>
-      {' '}
-      <span className={styles.red}> ⬇ </span>{' '}
+      <span className={styles.red}> ⬇ </span>
+
       {history.reduce((acc, item) => {
         if (item.type === 'withdrawal') {
           acc = Number(acc) + Number(item.amount);
         }
         return acc;
-      }, 0)}{' '}
-      {' $'}{' '}
-    </span>{' '}
+      }, 0)}
+
+      {' $'}
+    </span>
+
     <span>
-      {' '}
       Balance: {balance}
-      .00 ${' '}
-    </span>{' '}
+      .00 $
+    </span>
   </section>
 );
 Balance.propTypes = {

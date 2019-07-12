@@ -39,9 +39,11 @@ class Dashboard extends Component {
           balance={balance}
           onDepositClick={this.addDepositTransaction}
           onWithdrawalClick={this.addWithdrawalTransaction}
-        />{' '}
-        <Balance balance={balance} history={history} />{' '}
-        <TransactionHistory history={history} />{' '}
+        />
+
+        <Balance balance={balance} history={history} />
+
+        <TransactionHistory history={history} />
       </div>
     );
   }
